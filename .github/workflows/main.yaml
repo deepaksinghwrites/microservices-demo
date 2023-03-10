@@ -38,9 +38,9 @@ jobs:
         pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
         pcc_user: ${{ secrets.PCC_USER }}
         pcc_pass: ${{ secrets.PCC_PASS }}
-        image_name: $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
+        image_name: $COMPLETE_DEMO_IMAGE
 
-  
+        
     #
     #
     # Check that manifest and complete-demo.yaml ahve the same content
