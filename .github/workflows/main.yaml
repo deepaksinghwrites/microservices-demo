@@ -38,8 +38,7 @@ jobs:
         pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
         pcc_user: ${{ secrets.PCC_USER }}
         pcc_pass: ${{ secrets.PCC_PASS }}
-        image_name: $COMPLETE_DEMO_IMAGE
-
+        image_name: 'docker.io/library/manifests-image'
         
     #
     #
