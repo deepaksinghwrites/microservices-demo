@@ -1,4 +1,4 @@
-name: CI for github actions v6
+name: CI for github actions v7
 
 on:
   push:
@@ -22,6 +22,23 @@ jobs:
       COMPLETE_DEMO_IMAGE: 'manifests-image'
     steps:
     - uses: actions/checkout@v2
+
+    - name: Run Scan on IaC files in the repository
+      uses: prisma-cloud-shiftleft/iac-scan-action@v1
+      id: iac-scan
+      with:
+        prisma_api_url: 'https://api.prismacloud.io'
+        access_key: ${{ secrets.PRISMA_CLOUD_ACCESS_KEY }}
+        secret_key: ${{ secrets.PRISMA_CLOUD_SECRET_KEY }}
+        asset_name: 'microservices-demo'
+        template_type: 'TF'
+        template_version: '0.13'
+    - name: Upload scan result artifact
+      uses: actions/upload-artifact@v2
+      if: success() || failure()
+      with:
+        name: iac_scan_result
+        path: ${{ steps.iac-scan.outputs.iac_scan_result_path }}
 
     #
     # Build image
