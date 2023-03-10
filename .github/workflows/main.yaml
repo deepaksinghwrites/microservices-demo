@@ -33,7 +33,6 @@ jobs:
         image_name: $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
     
     #
-    #
     # Build image
     - name: Build image
       env:
