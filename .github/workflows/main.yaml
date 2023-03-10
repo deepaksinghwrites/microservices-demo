@@ -1,4 +1,4 @@
-name: ci
+name: ci github actions
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
       with:
         pcc_console_url: ${{ secrets.PCC_CONSOLE_URL }}
         pcc_user: ${{ secrets.PCC_USER }}
-        pcc_pass: ${{ secrets.PCC_PASS }}
+        pcc_pass: ${{ secrets.   }}
         image_name: $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
     
     #
