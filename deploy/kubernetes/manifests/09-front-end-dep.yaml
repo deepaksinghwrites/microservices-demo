@@ -27,7 +27,7 @@ spec:
         ports:
         - containerPort: 8079
         env:
-        - name: SESSION_REDIS
+        - name: SESSION_REDIS 
           value: "true"
         securityContext:
           runAsNonRoot: true
