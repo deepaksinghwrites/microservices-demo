@@ -1,4 +1,4 @@
-name: ci
+name: ci for github actions
 
 on:
   push:
