@@ -23,6 +23,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+ 
+    #
+    # Build image
+    - name: Build image
+      env:
+        DOCKER_BUILDKIT: 1
+      run: docker build -t $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
+
     - name: Prisma Cloud image scan
       id: scan
       uses: PaloAltoNetworks/prisma-cloud-scan@v1
@@ -31,14 +39,8 @@ jobs:
         pcc_user: ${{ secrets.PCC_USER }}
         pcc_pass: ${{ secrets.PCC_PASS }}
         image_name: $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
-    
-    #
-    # Build image
-    - name: Build image
-      env:
-        DOCKER_BUILDKIT: 1
-      run: docker build -t $COMPLETE_DEMO_IMAGE $COMPLETE_DEMO_DIR
 
+  
     #
     #
     # Check that manifest and complete-demo.yaml ahve the same content
