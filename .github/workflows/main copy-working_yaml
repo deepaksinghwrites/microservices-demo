@@ -23,14 +23,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-  steps:
-    - name: Run Checkov action
-      id: checkov
-      uses: bridgecrewio/checkov-action@master
-      env:
-        PRISMA_API_URL: https://app.prismacloud.io
-      with:
-        api-key: ${{ secrets.BC_API_KEY }}
  
     #
     # Build image
