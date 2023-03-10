@@ -1,4 +1,4 @@
-name: CI for github actions v9
+name: CI for github actions v10
 
 on:
   push:
@@ -25,6 +25,7 @@ jobs:
 
 # IaC Scan via checkov
 # https://github.com/marketplace/actions/prisma-cloud-iac-scan
+# https://github.com/bridgecrewio/checkov-action/tree/v12
     #
     # Build image
     - name: Build image
